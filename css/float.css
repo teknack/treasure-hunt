@@ -1,0 +1,153 @@
+
+/* jqFloat.js */
+
+.cloud{
+	width:300px;
+	height:120px;
+	background:url(../images/cloud.png);
+	position:absolute;
+	z-index:10;
+}
+
+
+#cloud1{
+	top:22%;
+	left:10%;
+	z-index:3;
+}
+#cloud2{
+	top:25%;
+	left:16%;
+}
+#cloud3{
+	top:25%;
+	right:17%;
+}
+#cloud4{
+	top:22%;
+	right:12%;
+	z-index:5;
+}
+
+#cloud5{
+	top:25%;
+	right:37%;
+}
+#cloud6{
+	top:22%;
+	right:32%;
+	z-index:5;
+}
+#cloud7{
+	top:22%;
+	left:30%;
+	z-index:3;
+}
+#cloud8{
+	top:25%;
+	left:30%;
+}
+
+
+.light
+{
+	width:200px;
+	height:200px;
+	background:url(../images/light.png);
+	position:absolute;
+	z-index:10;
+}
+
+#light1
+{
+top:32%;
+	left:12%;
+	z-index:-10;
+}
+
+#light2
+{
+top:32%;
+	left:27%;
+	height:150px;
+	z-index:-10;
+}
+
+#light3
+{
+top:32%;
+	right:12%;
+	z-index:-10;
+}
+
+#light4
+{
+top:32%;
+	right:27%;
+	height:150px;
+	z-index:-10;
+}
+
+
+
+
+.water{
+	width:1800px;
+	height:50px;
+position:absolute;
+	z-index:10;
+}
+
+#waterb
+{
+	background:url(../images/water.png);
+	top:70%;
+	
+	position:absolute;
+	height:50px;
+	width:1800px;
+	
+		z-index:10;
+}
+#water1
+{
+	background:url(../images/water1.png);
+	top:60%;
+	right:1px;
+	height:50px;
+	z-index:8;
+}
+#water2
+{
+	background:url(../images/water2.png);
+	top:50%;
+	
+	height:50px;
+	z-index:6;
+}
+#water3
+{
+	background:url(../images/water3.png);
+	right:1px;
+		top:40%;
+	height:50px;
+	z-index:4;
+}
+
+#ship
+{
+	background:url(../images/ship.png);
+	top:1%;
+	right:50%;
+	width:150px;
+	height:99px;
+	z-index:7;
+	position:absolute;
+	
+}
+
+#pirate
+{
+position:relative;
+height:150px;
+}
