@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .oth
 	{
 		    
@@ -359,4 +360,178 @@ margin-top:50px;
 }       	
 		
        	
+=======
+.oth
+	{
+		    
+		background-image: url("../images/index.jpg"); 
+        
+		 background-size:100% 100%;
+    -webkit-background-size:100% 100%;        /*  Safari  */
+    -khtml-background-size:100% 100%;         /*  Konqueror  */
+    -moz-background-size:100% 100%;          
+	background-repeat:no-repeat;
+	position:relative;
+	}
+	
+	.contain
+	{
+	   width: 80%;
+	height: auto;
+position: relative;
+background-color: rgba(255,255,255,0.5);
+
+z-index: 0;
+margin-left: auto;
+margin-right: auto;
+margin-top: 0.5%;
+max-width: 85%;
+}
+
+@font-face {
+font-family: carbon;
+font-weight: bolder;
+src: url("../fonts/carbon.ttf") format("opentype");
+}
+.level5
+{
+  background-image: url("../images/farm.jpg"); 
+         
+		 background-size:100% 100%;
+    -webkit-background-size:100% 100%;        /*  Safari  */
+    -khtml-background-size:100% 100%;         /*  Konqueror  */
+    -moz-background-size:100% 100%;          
+	background-repeat:no-repeat;
+	position:relative;
+    
+}
+.level3
+{
+  background-image: url("../images/finaltunnel.jpg"); 
+         
+		 background-size:100% 100%;
+    -webkit-background-size:100% 100%;        /*  Safari  */
+    -khtml-background-size:100% 100%;         /*  Konqueror  */
+    -moz-background-size:100% 100%;          
+	background-repeat:no-repeat;
+	position:relative;
+    
+}
+
+.level4
+{
+  background-image: url("../images/home.jpg"); 
+         
+		 background-size:100% 100%;
+    -webkit-background-size:100% 100%;        /*  Safari  */
+    -khtml-background-size:100% 100%;         /*  Konqueror  */
+    -moz-background-size:100% 100%;          
+	background-repeat:no-repeat;
+	position:relative;
+    
+}
+	
+.leveldetails
+{
+  width:auto;
+  height:6%;
+  padding-top: 4%;
+}	
+.detailbox
+{
+   width:13%;
+   height:100%;
+   background-color: #000000;
+   border: solid 1px #ffffff;
+   position: relative;
+    
+   float: left;
+   text-align: center;
+   
+ }
+.levelcontain
+{
+	width: 80%;
+	height: auto;
+    background-color: rgba(255,255,255,0.5);
+z-index: 0;
+margin-left: auto;
+margin-right: auto;
+margin-top: auto;
+margin-bottom: auto;
+}
+.levelcontainl
+{
+	width: 80%;
+	height: auto;
+    background-color: rgba(255,255,255,0.5);
+z-index: 0;
+margin-right: auto;
+margin-top: auto;
+margin-bottom: auto;
+}
+.levelcontainr
+{
+	width: 80%;
+	height: auto;
+    background-color: rgba(255,255,255,0.5);
+z-index: 0;
+margin-left: auto;
+margin-top: auto;
+margin-bottom: auto;
+}
+.inputstyle
+{
+width:370px;
+height:30px;
+}
+.submitstyle
+{
+width:132px;
+height:40px;
+font-family: 'carbon';
+border: 1px solid #b7cef9;
+border-radius:10px;
+background: #000000;
+padding: 5px 0;
+text-align:center;
+color: #fff;
+font-size: 23px;
+
+}
+.progressbutton
+		{
+			width:132px;
+			height:43px;
+			font-family: 'carbon';
+			border: 1px solid #b7cef9;
+			
+			background: #000000;
+			padding: 5px 0;
+			text-align:center;
+			color: #fff;
+			font-size: 21px;
+	
+		}
+        .progressbutton:hover { -moz-box-shadow: 0 0 20px #ccc; -webkit-box-shadow: 0 0 20px #ccc; box-shadow: 0 0 20px #ccc; } 
+
+		 #element_to_pop_up { 
+    background-color:#fff;
+	width:10%;
+    font-size:20px;
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width:400px;
+    min-height: 180px;
+}
+.b-close{
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:5px;
+}
+
+       	
+>>>>>>> 841657b5ae26cb128b4451da0038b67b6b03c69e
 		
