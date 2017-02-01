@@ -1,8 +1,8 @@
 <?php
 include("conn.php");
 	$level = "100";
-	$tek_name = $_SESSION['tek_name'];
-	$res = mysql_query("select level,startlevel,final from oth_15 where tek_name='".$tek_name."'"); 
+	$tek_emailid = $_SESSION['tek_emailid'];
+	$res = mysql_query("select level,startlevel,final from oth_16 where tek_emailid='".$tek_emailid."'"); 
 	
 		$row = mysql_fetch_array($res);
 		if($row)

@@ -1,11 +1,11 @@
 <?php
 session_start();
-if(isset($_SESSION['tek_name']))
+if(isset($_SESSION['tek_emailid']))
 {	
 include("php/conn.php");
 require_once ('php/quit.php');
 
- $tek_userid = $_SESSION['tek_name'];
+ $tek_userid = $_SESSION['tek_emailid'];
   
 	
 	
@@ -45,7 +45,7 @@ require_once ('php/quit.php');
 				<p class="para">
 				 You have helped Kane reach the rest of the survivors successfully by solving all the tasks. Now Kane 
 				 along with the rest  of the survivors will work towards a new beginning trying to reverse years worth of damage and 
-                 and learning from their previous mistakes..<br>
+                 learning from their previous mistakes..<br>
                   Well done, your efforts helped save humanity!! :D <br>
 				 
 				 </p>

@@ -1,21 +1,21 @@
 <?php
 session_start();
-if(isset($_SESSION['tek_name']))
+if(isset($_SESSION['tek_emailid']))
 {	
 include("php/conn.php");
 require_once ('php/quit.php');
-    mysql_query("INSERT INTO oth_15 (tek_name,level, stime) VALUES ('$tek_name','0',NOW())"); 
+    mysql_query("INSERT INTO oth_16 (tek_emailid,level, stime) VALUES ('$tek_emailid','0',NOW())"); 
 
      
-	$tek_name = $_SESSION['tek_name'];
-	$res = mysql_query("select startlevel,level from oth_15 where tek_name='$tek_name'");  
+	$tek_emailid = $_SESSION['tek_emailid'];
+	$res = mysql_query("select startlevel,level from oth_16 where tek_emailid='$tek_emailid'");  
 	$row = mysql_fetch_array($res);
 	$level = $row['level'];
 	$startlevel= $row['startlevel']; 
    
     if($startlevel==0)
 	{
-		mysql_query("UPDATE oth_15 SET stime=NOW() WHERE tek_name='$tek_name'");
+		mysql_query("UPDATE oth_16 SET stime=NOW() WHERE tek_emailid='$tek_emailid'");
 		
     }
 	
@@ -24,7 +24,7 @@ require_once ('php/quit.php');
 			require_once('php/level.php');
 	}
 
-    mysql_query("UPDATE oth_15 SET startlevel=1 WHERE tek_name='$tek_name'");
+    mysql_query("UPDATE oth_16 SET startlevel=1 WHERE tek_emailid='$tek_emailid'");
 
 if(isset($_POST['answer']))
 	{
@@ -40,9 +40,10 @@ if(isset($_POST['answer']))
 		
 		if(strcasecmp ( $rightans1, $answer) == 0)
 		{
-			
-			$op=mysql_query("UPDATE oth_15 SET level=1, ctime=NOW(),score=25 WHERE tek_name='$tek_name'");
-			$res = mysql_query("select stime,ctime,dtimemin from oth_15 where tek_name='$tek_name'");  
+			include "../mega-event/common-code.php";
+			sendScore("treasure-hunt",25,$_SESSION["tek_emailid"]);
+			$op=mysql_query("UPDATE oth_16 SET level=1, ctime=NOW(),score=25 WHERE tek_emailid='$tek_emailid'");
+			$res = mysql_query("select stime,ctime,dtimemin from oth_16 where tek_emailid='$tek_emailid'");  
 			$row = mysql_fetch_array($res);
 			$stime=new DateTime($row['stime']);
             $dtimemin=$row['dtimemin'];
@@ -52,7 +53,7 @@ if(isset($_POST['answer']))
 			$minutes+=$dtime->h*60;
 			$minutes+=$dtime->i;
 			$dtimemin=$dtimemin+$minutes;
-			mysql_query("UPDATE oth_15 SET dtimemin='$dtimemin' WHERE tek_name='$tek_name'");
+			mysql_query("UPDATE oth_16 SET dtimemin='$dtimemin' WHERE tek_emailid='$tek_emailid'");
 			
 			echo '<script>window.top.location="level2.php";</script>';
 			
@@ -111,7 +112,7 @@ if(isset($_POST['answer']))
 <div id="element_to_pop_up">
     <a class="b-close">x<a/>
 	<center>
-	  <p style="font-size: 28px;">
+	  <p style="font-size: 28px;font-family:'carbon'">
       LEVELS COMPLETED: 0<br><br>
 	  LEVELS LEFT: 14<br> </p>
 	  </center>
@@ -156,7 +157,7 @@ if(isset($_POST['answer']))
 		   <div style="margin-top:1%;"> 
 		   <form name="input" action="" method="post">
 		                    <center>
-							<input class="inputstyle" type="text" name="answer" placeholder="Brand"><br><br>
+							<input class="inputstyle" type="text" name="answer" placeholder=" Jeans Brand"><br><br>
 							<input class="submitstyle" type="submit" value="PROCEED"></center>		
 						</form>
 		   <br><br>

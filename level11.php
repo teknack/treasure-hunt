@@ -1,19 +1,19 @@
 <?php
 session_start();
-if(isset($_SESSION['tek_name']))
+if(isset($_SESSION['tek_emailid']))
 {	
 include("php/conn.php");
 require_once ('php/quit.php');
 
-  $tek_name = $_SESSION['tek_name'];
-	$res = mysql_query("select startlevel,level from oth_15 where tek_name='$tek_name'");  
+  $tek_emailid = $_SESSION['tek_emailid'];
+	$res = mysql_query("select startlevel,level from oth_16 where tek_emailid='$tek_emailid'");  
 	$row = mysql_fetch_array($res);
 	$level = $row['level'];
 	$startlevel= $row['startlevel']; 
    
     if($startlevel==10)
 	{
-		mysql_query("UPDATE oth_15 SET stime=NOW() WHERE tek_name='$tek_name'");
+		mysql_query("UPDATE oth_16 SET stime=NOW() WHERE tek_emailid='$tek_emailid'");
 		
     }
 	
@@ -26,13 +26,13 @@ require_once ('php/quit.php');
 
 	if($level<10) // < previous level
 	{
-	mysql_query("UPDATE oth_15 SET quit=1
-	WHERE tek_name='$tek_name'");
+	mysql_query("UPDATE oth_16 SET quit=1
+	WHERE tek_emailid='$tek_emailid'");
 	echo "<script>window.alert('We caught your bluff. You shan\'t be able to find the treasure this year. Check out the other games');</script>";	
 	echo '<script>window.top.location.assign("redirect.php");</script>';	
 	exit;
 	}
-    mysql_query("UPDATE oth_15 SET startlevel=11 WHERE tek_name='$tek_name'");
+    mysql_query("UPDATE oth_16 SET startlevel=11 WHERE tek_emailid='$tek_emailid'");
 
 
 if(isset($_POST['answer']))
@@ -42,15 +42,16 @@ if(isset($_POST['answer']))
 		$answer = preg_replace('/\s+/', '',$ans);
 		
 		
-		$rightans1 = "markwhatney";
+		$rightans1 = "markwatney";
 		
 		
 		
 		if(strcasecmp ( $rightans1, $answer) == 0)
 		{
-			
-			mysql_query("UPDATE oth_15 SET level=11, ctime=NOW(),score=625 WHERE tek_name='$tek_name'");
-			$res = mysql_query("select stime,ctime,dtimemin from oth_15 where tek_name='$tek_name'");  
+			include "../mega-event/common-code.php";
+			sendScore("treasure-hunt",100,$_SESSION["tek_emailid"]);
+			mysql_query("UPDATE oth_16 SET level=11, ctime=NOW(),score=625 WHERE tek_emailid='$tek_emailid'");
+			$res = mysql_query("select stime,ctime,dtimemin from oth_16 where tek_emailid='$tek_emailid'");  
 			$row = mysql_fetch_array($res);
 			$stime=new DateTime($row['stime']);
             $dtimemin=$row['dtimemin'];
@@ -60,7 +61,7 @@ if(isset($_POST['answer']))
 			$minutes+=$dtime->h*60;
 			$minutes+=$dtime->i;
 			$dtimemin=$dtimemin+$minutes;
-			mysql_query("UPDATE oth_15 SET dtimemin='$dtimemin' WHERE tek_name='$tek_name'");
+			mysql_query("UPDATE oth_16 SET dtimemin='$dtimemin' WHERE tek_emailid='$tek_emailid'");
 			
 			echo '<script>window.top.location.assign("level12.php");</script>';
 			

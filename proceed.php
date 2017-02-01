@@ -1,10 +1,10 @@
 <?php
 session_start();
-if(isset($_SESSION['tek_name']))
+if(isset($_SESSION['tek_emailid']))
 {	
-   $tek_name=$_SESSION['tek_name'];
+   $tek_emailid=$_SESSION['tek_emailid'];
    include("php/conn.php");
-   $res = mysql_query("select level,startlevel from oth_15 where tek_name='$tek_name'");  
+   $res = mysql_query("select level,startlevel from oth_16 where tek_emailid='$tek_emailid'");  
 		$row = mysql_fetch_array($res);
 		if($row)
 		{
@@ -18,8 +18,8 @@ if(isset($_SESSION['tek_name']))
 		}
    function level()
    {
-    $tek_name=$_SESSION['tek_name'];
-   $res = mysql_query("select level from oth_15 where tek_name='$tek_name'");  
+    $tek_emailid=$_SESSION['tek_emailid'];
+   $res = mysql_query("select level from oth_16 where tek_emailid='$tek_emailid'");  
    $row = mysql_fetch_array($res);
    $level = $row['level'];
    $level=$level+1;

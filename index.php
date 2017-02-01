@@ -1,7 +1,7 @@
 <?php
 session_start();
-$_SESSION['tek_name']="teknack";
-if(isset($_SESSION['tek_name']))
+$_SESSION['tek_emailid']="teknack@xyz.com";
+if(isset($_SESSION['tek_emailid']))
 {	
 require_once ('php/quit.php');
 //require_once ('php/level.php');
@@ -98,7 +98,10 @@ require_once ('php/conn.php');
 			font-size: 23px;
 	
 		}
-        .startbutton:hover { -moz-box-shadow: 0 0 15px #ccc; -webkit-box-shadow: 0 0 15px #ccc; box-shadow: 0 0 15px #ccc; } 
+        .startbutton:hover { -moz-box-shadow: 0 0 15px #ccc;
+		-webkit-box-shadow: 0 0 15px #ccc; 
+		box-shadow: 0 0 15px #ccc;
+        cursor:pointer;		} 
 
 
        	
@@ -128,7 +131,7 @@ require_once ('php/conn.php');
 		<div class="oth">
 		  <div class="logo" align="center">
 		       
-		       <img src="images/logo.png" width="16%" height="85%">
+		       <img src="images/logo.png" width="25%" height="100%">
 			   
 		    </div>
 		   <div class="contain">
